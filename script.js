@@ -39,7 +39,7 @@ function generatePassword() {
     confirmNumbers = confirm("Will this contain Numbers");
     confirmSpecialChar = confirm("Will this contain Special characters");
   }
-  // if for 4 negative options
+  // if 4 negative options
   if (
     !confirmLowercase &&
     !confirmUppercase &&
@@ -55,6 +55,16 @@ function generatePassword() {
     confirmSpecialChar
   ) {
     choices = lowercase.concat(uppercase, numbers, specialChar);
+  }
+  // Else if for 3 positive options
+  else if (confirmSpecialChar && confirmNumbers && confirmUppercase) {
+    choices = specialChar.concat(numbers, uppercase);
+  } else if (confirmSpecialChar && confirmNumbers && confirmLowercase) {
+    choices = specialChar.concat(numbers, lowercase);
+  } else if (confirmSpecialChar && confirmLowercase && confirmUppercase) {
+    choices = specialChar.concat(lowercase, uppercase);
+  } else if (confirmNumbers && confirmLowercase && confirmUppercase) {
+    choices = numbers.concat(lowercase, uppercase);
   }
 }
 // Write password to the #password input
