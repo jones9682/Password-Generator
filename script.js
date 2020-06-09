@@ -1,23 +1,35 @@
-//define variables
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numberChar = "0123456789";
+var specialChar = "!@#$%^&*()_-+={}[];:'`~<,>.?/|";
 
-var lower = 'abcdefghijklmnopqrstuvwxyz';
-var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var special = '!@#$^&%*()+=-[]{}|:<>?,.';
-var numbers = '1234567890';
+//Function used to determine the length of the password
+function determineLength() {
+  passwordLength = prompt(
+    "Choose how many characters long you'd like your password to be (between 8-128 characters): "
+  );
 
-var pwd = '';
+  if (passwordLength < 8) {
+    alert("Password length must be a number between 8-128 characters");
+    determineLength();
+  } else if (passwordLength > 128) {
+    alert("Password length must be a number between 8-128 characters");
+    determineLength();
+  }
+}
+function generatePassword() {
+  determineLength();
+}
 
-var lowerSelection = false;
-var upperSelection = false;
-var specialSelection = false;
-var numberSelection = false;
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-function generate() {
-    var confirmLength = '';
-//asking user to input desired character length
-    while (isNaN(confirmLength) || confirmLength < 8 || confirmLength > 128) {
-        confirmLength = prompt("What length would you like the password to be? (Between 8 to 128 characters)");
-        if (confirmLength === null) {
-            break;
-        }
-    }
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
