@@ -6,11 +6,11 @@ var numbers = "0123456789";
 var specialChar = "!@#$%^&*()_-+={}[];:'`~<,>.?/|";
 
 var enter;
+var choices;
 var confirmLowercase;
 var confirmUppercase;
 var confirmNumbers;
 var confirmSpecialChar;
-var choices;
 
 var get = document.querySelector("#generate");
 
@@ -67,18 +67,28 @@ function generatePassword() {
     choices = numbers.concat(lowercase, uppercase);
   }
   // Else if 2 positive selections
-  else if (confirmSpecialChar && confirmNumber) {
-    choices = specialChar.concat(number);
+  else if (confirmSpecialChar && confirmNumbers) {
+    choices = specialChar.concat(numbers);
   } else if (confirmSpecialChar && confirmLowercase) {
     choices = specialChar.concat(lowercase);
   } else if (confirmSpecialChar && confirmUppercase) {
     choices = specialChar.concat(uppercase);
-  } else if (confirmLowercase && confirmNumber) {
-    choices = lowercase.concat(number);
+  } else if (confirmLowercase && confirmNumbers) {
+    choices = lowercase.concat(numbers);
   } else if (confirmLowercase && confirmUppercase) {
     choices = lowercase.concat(uppercase);
-  } else if (confirmNumber && confirmUppercase) {
-    choices = number.concat(uppercase);
+  } else if (confirmNumbers && confirmUppercase) {
+    choices = numbers.concat(uppercase);
+  }
+  // Else if 1 positive selection
+  else if (confirmLowercase) {
+    choices = lowercase;
+  } else if (confirmUppercase) {
+    choices = uppercase;
+  } else if (confirmNumbers) {
+    choices = numbes;
+  } else if (confirmSpecialChar) {
+    choices = specialChar;
   }
 }
 // Write password to the #password input
