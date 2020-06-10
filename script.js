@@ -46,9 +46,25 @@ function generatePassword() {
     !confirmNumbers &&
     !confirmSpecialChar
   ) {
-    choices = alert("You must choose a criteria!");
-    //  Else if 4 positive selections
-  } else if (
+    alert("You must choose a criteria!");
+    //  Teacher Assistant helped with consolidate
+  } else {
+    var choices = [];
+    if (confirmLowercase) {
+      choices = choices.concat(lowercase);
+    }
+    if (confirmUppercase) {
+      choices = choices.concat(uppercase);
+    }
+    if (confirmNumbers) {
+      choices = choices.concat(numbers);
+    }
+    if (confirmSpecialChar) {
+      choices = choices.concat(specialChar);
+    }
+  }
+
+  /*} else if (
     confirmLowercase &&
     confirmUppercase &&
     confirmNumbers &&
@@ -89,7 +105,12 @@ function generatePassword() {
     choices = numbes;
   } else if (confirmSpecialChar) {
     choices = specialChar;
-  }
+  }*/
+  var password = "";
+
+  Math.random() * choices.length;
+
+  return password;
 }
 // Write password to the #password input
 function writePassword() {
