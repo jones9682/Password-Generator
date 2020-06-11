@@ -102,7 +102,10 @@ function generatePassword() {
     choices = specialChar;
   }*/
 
+  // Password variable is an array placeholder for user generated amount of lenngth
   var password = "";
+
+  // Random selection for all variables
   for (var i = 0; i < enter; i++) {
     var password = choices.concat(Math.floor(Math.random() * choices.length));
   }
