@@ -1,6 +1,12 @@
 # week-3-hw
 
-![mobile screen shot](assets/images/mobile_screen_capture.png)
+# Mobile screen capture
+
+![mobile screen capture](assets/images/mobile_screen_capture.png)
+
+# Screen Capture
+
+![screen capture](assets/images/screen_capture.png)
 
 # 03 JavaScript: Password Generator
 
