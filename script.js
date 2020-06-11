@@ -12,8 +12,6 @@ var confirmUppercase;
 var confirmNumbers;
 var confirmSpecialChar;
 
-var get = document.querySelector("#generate");
-
 // Function to generate password
 function generatePassword() {
   enter = parseInt(
@@ -103,11 +101,12 @@ function generatePassword() {
   }*/
 
   // Password variable is an array placeholder for user generated amount of lenngth
-  var password = "";
+  var password = [];
 
   // Random selection for all variables
   for (var i = 0; i < enter; i++) {
-    var password = choices.concat(Math.floor(Math.random() * choices.length));
+    pickChoices = choices.concat(Math.floor[Math.random() * choices.length]);
+    password.push(pickChoices);
   }
 
   return password;
