@@ -14,11 +14,6 @@ var confirmSpecialChar;
 
 var get = document.querySelector("#generate");
 
-get.addEventListener("click", function () {
-  ps = generatePassword();
-  document.getElementById("password").placeholder = ps;
-});
-
 // Function to generate password
 function generatePassword() {
   enter = parseInt(
@@ -106,9 +101,11 @@ function generatePassword() {
   } else if (confirmSpecialChar) {
     choices = specialChar;
   }*/
-  var password = "";
 
-  Math.random() * choices.length;
+  var password = "";
+  for (var i = 0; i < enter; i++) {
+    var password = choices.concat(Math.floor(Math.random() * choices.length));
+  }
 
   return password;
 }
@@ -122,3 +119,16 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to copy button
+var copy = document.querySelector("#copy");
+copy.addEventListener("click", function () {
+  copyPassword();
+});
+
+// This code copies password generated to clipboard
+function copyPassword() {
+  document.getElementById("password").select();
+  document.execCommand("Copy");
+  alert("Password copied to clipboard!");
+}
