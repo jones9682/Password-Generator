@@ -1,5 +1,7 @@
 # week-3-hw
 
+Website URL: https://jones9682.github.io/Password-Generator/
+
 # Mobile screen capture
 
 ![mobile screen capture](assets/images/mobile_screen_capture.png)
