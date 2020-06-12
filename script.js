@@ -102,14 +102,14 @@ function generatePassword() {
 
   // Password variable is an array placeholder for user generated amount of lenngth
   var password = [];
-
+  choices = choices.join();
   // Random selection for all variables
   for (var i = 0; i < enter; i++) {
-    pickChoices = choices.concat(Math.floor[Math.random() * choices.length]);
+    pickChoices = choices[Math.floor(Math.random() * choices.length)];
     password.push(pickChoices);
   }
 
-  return password;
+  return password.join("");
 }
 // Write password to the #password input
 function writePassword() {
