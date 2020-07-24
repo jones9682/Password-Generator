@@ -1,4 +1,4 @@
-# week-3-hw
+# Password Generator
 
 Website URL: https://jones9682.github.io/Password-Generator/
 
